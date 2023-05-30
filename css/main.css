@@ -1,0 +1,259 @@
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.sec {
+    padding: 100px 0;
+}
+
+.sec .tit {
+    margin: 0 auto 30px auto;
+}
+
+.sec .tit h2 {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.sec .tit p {
+    font-size: 15px;
+    word-break: keep-all;
+    line-height: 19px;
+}
+
+/* 헤더 */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+    border-bottom: 1px solid #ddd
+}
+
+.header .inner {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    line-height: 100px;
+    transition: 0.5s;
+}
+
+.header.on .inner {
+    height: 70px;
+}
+
+.header.on .sub {
+    top: 80px;
+}
+
+.header.on .gnb::before {
+    top: 70px;
+}
+
+.header a {
+    display: block;
+}
+
+.header .gnb {
+    margin: 0 0 0 auto;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 70px;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .gnb>ul>li>a:hover {
+    font-weight: 700;
+    color: rgba(152, 5, 69);
+}
+
+.header .sub {
+    height: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    color: #dfdfdf;
+    text-align: center;
+    width: 100px;
+    line-height: 35px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+}
+
+.header .gnb:hover>ul>li .sub {
+    height: 350px;
+
+}
+
+.header .sub>li>a {
+    font-size: 15px;
+}
+
+.header .vision {
+    line-height: 15px;
+}
+
+.header .vision>li {
+    padding: 5px 0;
+}
+
+.header .sub>li>a:hover {
+    background: #fff;
+    border-radius: 2px;
+    color: rgba(152, 5, 69);
+}
+
+.header .gnb::before {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 1xp solid transparent;
+    background: rgba(20, 46, 73, 0.705);
+    z-index: 999;
+
+    transition: 0.5s;
+}
+
+.header .gnb:hover::before {
+    height: 290px;
+}
+
+.header .vista {
+    margin: 0 0 0 50px;
+}
+
+/* 메인 */
+.main_visual {
+    padding: 0 0 80px 0;
+}
+
+.main_visual .main_slide .itm {
+    position: relative;
+    height: 878px;
+}
+
+.main_visual .main_slide .itm01 {
+    background: url(../images/dwmain01.JPG) no-repeat;
+    background-size: 100% 100%;
+}
+
+.main_visual .main_slide .itm02 {
+    background: url(../images/dwmain02.JPG) no-repeat;
+    background-size: 100% 100%;
+}
+
+.main_visual .main_slide .itm03 {
+    background: url(../images/dwmain03.JPG) no-repeat;
+    background-size: 100% 100%;
+}
+
+.main_visual .slogan {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.main_visual .slogan h2 {
+    margin: 0 0 10px 0;
+    color: #353535;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+.main_visual .slogan p {
+    color: #353535;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+.main_visual .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-size: 0;
+    width: 100px;
+    height: 100px;
+    border-left: 1px solid rgba(255, 255, 255, 0.705);
+    border-top: 1px solid rgba(255, 255, 255, 0.705);
+}
+
+
+.main_visual .main_slide .slick-prev {
+    margin: 0 0 0 -800px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.main_visual .main_slide .slick-next {
+    margin: 0 0 0 800px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+/* 컨텐츠 비지니스 */
+.business {
+    background: #f9f9f9;
+    padding: 50px 0;
+
+}
+
+.business .title {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 60px 0;
+}
+
+.business .content {
+    display: flex;
+    gap: 30px;
+}
+
+.business .content>* {
+    flex: 1;
+    overflow: hidden;
+}
+
+.business .content .left .pic_slide {
+    width: 400px;
+}
+
+
+
+.business .content .right .product_slide {
+    top: 40%;
+}
+
+
+@media (max-width: 768px) {
+    .business .content {
+        flex-direction: column;
+    }
+}
