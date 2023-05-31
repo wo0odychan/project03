@@ -328,10 +328,11 @@
 
 .main_business .content .right .product_slide .img_box {
     overflow: hidden;
+
 }
 
 .main_business .content .right .product_slide figure:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 0.5s;
 }
 
@@ -381,10 +382,30 @@
 
 /* 뉴스 */
 .news {
-    display: flex;
     padding: 50px 0;
+    line-height: 2;
 }
 
-.notice {
+.news .title {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 60px 0;
+}
+
+.news .inner {
     display: flex;
+    gap: 50px;
+}
+
+
+.news .inner .notice {
+    position: relative;
+width: 600px; 
+
+}
+
+.news .inner .notice::before {
+content: "";
+position: absolute;
 }
