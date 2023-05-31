@@ -39,6 +39,7 @@
     display: flex;
     align-items: center;
     height: 90px;
+    width: 100%;
     line-height: 100px;
     transition: 0.5s;
 }
@@ -57,6 +58,7 @@
 
 .header a {
     display: block;
+
 }
 
 .header .gnb {
@@ -72,7 +74,7 @@
     position: relative;
 }
 
-.header .gnb>ul>li>a:hover {
+.header .gnb>ul>li:hover>a {
     font-weight: 700;
     color: rgba(152, 5, 69);
 }
@@ -136,119 +138,238 @@
 }
 
 .header .vista {
-    margin: 0 0 0 50px;
+    margin: 0 0 0 80px;
 }
 
 /* 메인 */
 .main_visual {
-    padding: 0 0 80px 0;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 0 50px 0;
 }
 
-.main_visual .main_slide .itm {
+.main_visual .itm {
     position: relative;
-    height: 878px;
+    min-height: 878px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 130% 130%;
+}
+
+.main_visual .itm.on {
+    background-size: 100% 100%;
+    transition: 4s;
 }
 
 .main_visual .main_slide .itm01 {
-    background: url(../images/dwmain01.JPG) no-repeat;
-    background-size: 100% 100%;
+    background-image: url(../images/dwmain01.JPG);
 }
 
 .main_visual .main_slide .itm02 {
-    background: url(../images/dwmain02.JPG) no-repeat;
-    background-size: 100% 100%;
+    background-image: url(../images/dwmain02.JPG);
 }
 
 .main_visual .main_slide .itm03 {
-    background: url(../images/dwmain03.JPG) no-repeat;
-    background-size: 100% 100%;
+    background-image: url(../images/dwmain03.JPG);
 }
 
 .main_visual .slogan {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    margin: 0 0 0 -460px;
 }
 
-.main_visual .slogan h2 {
-    margin: 0 0 10px 0;
-    color: #353535;
-    font-size: 60px;
-    font-weight: 700;
+.main_visual h2 {
+    color: #fff;
+    font-size: 85px;
+    font-weight: 900;
+    margin: 0 0 5px 0;
     text-transform: uppercase;
-    text-shadow: 0 0 5px #ffffff;
+    transform: translate(100px, 0);
+    text-shadow: 0 0 1px #8a8a8a;
+    opacity: 0;
 }
 
-.main_visual .slogan p {
-    color: #353535;
-    font-weight: 700;
+.main_visual .itm.on h2 {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+.main_visual .itm p {
+    color: #ffffff;
+
     font-size: 15px;
-    text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 1px #8a8a8a;
+    transform: translate(100px, 0);
+    opacity: 0;
 }
 
-.main_visual .slick-arrow {
+.main_visual .itm.on p {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.main_visual .menu li {
+    position: relative;
+    width: 70px;
+    height: 30px;
+}
+
+.main_visual .menu li::before {
+    content: "";
     position: absolute;
-    top: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.main_visual .menu li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 1);
+}
+
+.main_visual .menu li.on::after {
+    width: 100%;
+    transition: 4s;
+}
+
+.main_visual .menu li a {
+    display: block;
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.main_visual .menu li.on a {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1)
+}
+
+.main_visual .menu {
+    position: absolute;
+    bottom: 150px;
     left: 50%;
-    z-index: 999;
 
-    background: transparent;
-    border: none;
-    outline: none;
+    display: flex;
+    gap: 10px;
 
-    font-size: 0;
-    width: 100px;
-    height: 100px;
-    border-left: 1px solid rgba(255, 255, 255, 0.705);
-    border-top: 1px solid rgba(255, 255, 255, 0.705);
+    transform: translate(0, 0);
+    margin: 0 0 0 300px;
+    padding: 0 15px;
 }
 
 
-.main_visual .main_slide .slick-prev {
-    margin: 0 0 0 -800px;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-
-.main_visual .main_slide .slick-next {
-    margin: 0 0 0 800px;
-    transform: translate(-50%, -50%) rotate(135deg);
-}
 
 /* 컨텐츠 비지니스 */
-.business {
+.main_business {
+    position: relative;
     background: #f9f9f9;
     padding: 50px 0;
 
 }
 
-.business .title {
+.main_business .title {
     font-size: 50px;
     font-weight: 700;
     text-align: center;
     margin: 0 0 60px 0;
 }
 
-.business .content {
-    display: flex;
-    gap: 30px;
+.main_business .content {
+    display: grid;
+    grid-template-columns: 200px 500px
 }
 
-.business .content>* {
-    flex: 1;
+.main_business .content .left .pic_slide {
+    width: 400px;
+    left: 10%;
+}
+
+.main_business .content .left .pic_slide img {
+    height: 350px;
+    width: 350px;
+    filter: drop-shadow(10px 6px 6px #aaaaaa);
+    border-radius: 2px;
+}
+
+.main_business .content .left .pic_slide figcaption {
+    margin: 15px 0;
+    line-height: 25px;
+}
+
+.main_business .content .left .pic_slide strong {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.main_business .content .left .pic_slide p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #636363;
+}
+
+.main_business .content .right .product_slide {
+    top: 40%;
+    left: 50%;
+    width: 700px;
+
+}
+
+.main_business .content .right .product_slide .img_box {
     overflow: hidden;
 }
 
-.business .content .left .pic_slide {
-    width: 400px;
+.main_business .content .right .product_slide figure:hover img {
+    transform: scale(1.2);
+    transition: 0.5s;
 }
 
+.main_business .content .right .product_slide figure {
+    padding: 5px;
+}
 
+.main_business .content .right .product_slide figcaption {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0;
+}
 
-.business .content .right .product_slide {
-    top: 40%;
+.main_business .arrows {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    display: flex;
+    gap: 10px;
+
+    transform: translate(-50%, -100%);
+    margin: 0 0 0 522px;
+    padding: 0 15px;
+
+}
+
+.main_business .arrows i {
+    font-size: 20px;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+.main_business .arrows i:hover {
+    color: rgba(152, 5, 69);
+    border: 1px solid rgba(152, 5, 69);
 }
 
 
@@ -256,4 +377,14 @@
     .business .content {
         flex-direction: column;
     }
+}
+
+/* 뉴스 */
+.news {
+    display: flex;
+    padding: 50px 0;
+}
+
+.notice {
+    display: flex;
 }

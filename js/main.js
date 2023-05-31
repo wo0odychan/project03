@@ -9,28 +9,51 @@ $(function () {
 
         }
     });
+    $('.main_slide').on('init afterChange', function (e, s, c) {
+        const current = $('.main_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+        $('.main_visual .menu li').eq(0).addClass('on');
+        $('.main_visual .menu li').eq(c).addClass('on').siblings().removeClass('on');
+    });
 
     $('.main_slide').slick({
-        arrows: true,
+        arrows: false,
         dots: false,
         autoplay: true,
         autoplaySpeed: 3000,
+        speed: 1000,
         pauseOnHover: false,
     });
 
-
+    $('.main_visual .menu li').on('click', function (e) {
+        e.preventDefault();
+        const idx = $(this).index();
+        $('.main_slide').slick('slickGoTo', idx);
+    });
 
     $('.pic_slide').slick({
-        arrows: true,
-        autoplay: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
         asNavFor: ".product_slide",
     });
 
+    $('.main_business .arrows .left').on('click', function () {
+        $('.product_slide').slick('slickNext')
+    });
+    $('.main_business .arrows .right').on('click', function () {
+        $('.product_slide').slick('slickPrev')
+    });
+
+
     $('.product_slide').slick({
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
+        slidesToScroll: 1,
         asNavFor: ".pic_slide",
         focusOnSelect: true,
+
         // 모바일 반응형이어유
         responsive: [{
             breakpoint: 768,
@@ -40,8 +63,5 @@ $(function () {
         }]
         // 
     });
-
-
-
 
 })
