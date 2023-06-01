@@ -4,26 +4,6 @@
     padding: 0 15px;
 }
 
-.sec {
-    padding: 100px 0;
-}
-
-.sec .tit {
-    margin: 0 auto 30px auto;
-}
-
-.sec .tit h2 {
-    margin: 0 0 10px 0;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.sec .tit p {
-    font-size: 15px;
-    word-break: keep-all;
-    line-height: 19px;
-}
-
 /* 헤더 */
 .header {
     position: sticky;
@@ -58,7 +38,7 @@
 
 .header a {
     display: block;
-
+    margin: 0 0 0 20px;
 }
 
 .header .gnb {
@@ -67,7 +47,7 @@
 
 .header .gnb>ul {
     display: flex;
-    gap: 70px;
+    gap: 40px;
 }
 
 .header .gnb>ul>li {
@@ -138,7 +118,7 @@
 }
 
 .header .vista {
-    margin: 0 0 0 80px;
+    margin: 0 0 0 40px;
 }
 
 /* 메인 */
@@ -147,6 +127,7 @@
     height: 100vh;
     overflow: hidden;
     padding: 0 0 50px 0;
+    z-index: 998;
 }
 
 .main_visual .itm {
@@ -179,7 +160,7 @@
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 0 0 0 -460px;
+    margin: 0 0 0 -450px;
 }
 
 .main_visual h2 {
@@ -275,7 +256,7 @@
 .main_business {
     position: relative;
     background: #f9f9f9;
-    padding: 50px 0;
+    padding: 80px 0;
 
 }
 
@@ -299,7 +280,7 @@
 .main_business .content .left .pic_slide img {
     height: 350px;
     width: 350px;
-    filter: drop-shadow(10px 6px 6px #aaaaaa);
+    filter: drop-shadow(5px 6px 6px #aaaaaa);
     border-radius: 2px;
 }
 
@@ -338,6 +319,7 @@
 
 .main_business .content .right .product_slide figure {
     padding: 5px;
+
 }
 
 .main_business .content .right .product_slide figcaption {
@@ -382,30 +364,185 @@
 
 /* 뉴스 */
 .news {
-    padding: 50px 0;
-    line-height: 2;
+    padding: 100px 0;
+
 }
 
-.news .title {
+.news h2 {
+    text-align: center;
     font-size: 50px;
     font-weight: 700;
-    text-align: center;
     margin: 0 0 60px 0;
 }
 
-.news .inner {
-    display: flex;
-    gap: 50px;
-}
-
-
-.news .inner .notice {
+.news .content {
     position: relative;
-width: 600px; 
+    display: flex;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    gap: 100px;
+}
+
+
+.news .content>* {
+    flex: 1;
+    line-height: 25px;
+}
+
+.news .content h3 {
+    font-size: 25px;
+    font-weight: 600;
+    color: rgba(152, 5, 69);
+    text-align: center;
+    margin: 0 0 25px 0;
+}
+
+.news .content li {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid #ddd;
 
 }
 
-.news .inner .notice::before {
-content: "";
-position: absolute;
+
+.news .content strong {
+    font-size: 18px;
+    white-space: nowrap;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+}
+
+.news .content span {
+    font-size: 15px;
+    color: #8a8a8a;
+}
+
+/* 사회공헌 */
+
+.social {
+    background: #f9f9f9;
+    padding: 100px 0;
+}
+
+.social h2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 60px 0;
+}
+
+.social .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+
+.social .inner li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.social .inner li figure {
+    overflow: hidden;
+}
+
+.social .inner li figure img {
+    transition: 0.5s;
+}
+
+.social .inner li .content:hover+figure img {
+    transform: scale(1.2);
+}
+
+.social .inner li:nth-child(even) figure {
+    order: -1;
+}
+
+.social .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+
+    padding: 0 50px;
+}
+
+.social .content:hover h3 {
+    color: rgba(152, 5, 69);
+}
+
+.social .content h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social .content p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8a8a8a;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+/* 푸터 */
+.footer {
+    padding: 25px 0;
+    background: #666;
+    color: #fff;
+    text-align: center;
+}
+
+.footer .inner {
+    font-size: 14px;
+    font-weight: 300;
+    color: #dfdfdf;
+}
+
+.footer .inner .company {
+    color: #adadad;
+    margin: 5px;
+}
+
+.footer .inner ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .inner ul>li {
+    padding: 0 15px 10px 15px;
+}
+
+.footer .inner ul>li:hover {
+    color: #fff;
+    font-weight: 400;
+}
+
+.to_top {
+    position: fixed;
+    bottom: 120px;
+    right: 150px;
+
+}
+
+.to_top i {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.to_top i:hover {
+    background: rgba(152, 5, 69);
 }
