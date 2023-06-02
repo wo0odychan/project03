@@ -52,6 +52,8 @@
 
 .header .gnb>ul>li {
     position: relative;
+    white-space: nowrap;
+    word-break: keep-all;
 }
 
 .header .gnb>ul>li:hover>a {
@@ -185,7 +187,7 @@
     color: #ffffff;
 
     font-size: 15px;
-    text-shadow: 0 0 1px #8a8a8a;
+    text-shadow: 0 0 3px #8a8a8a;
     transform: translate(100px, 0);
     opacity: 0;
 }
